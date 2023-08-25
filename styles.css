@@ -59,4 +59,56 @@ input[type="checkbox"] {
     left: 0;
     right: 0;
     border-radius: 3px;
+    background: linear-gradient(273deg, rgba(135,85,196,1) 20%, rgba(252,70,107,1) 80%);
+}
+
+.password-wrap input {
+    flex: 1 1 0%;
+    padding: 0.5rem;
+    color: #282847;
+}
+
+.password-wrap input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.password-wrap button {
+    cursor: pointer;
+    background: linear-gradient(273deg, rgba(135,85,196,1) 0%, rgba(252,70,107,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+label {
+    display: flex;
+    user-select: none;
+    margin-bottom: 1rem;
+}
+
+label span {
+    display: block;
+    flex: 1 1 0%;
+    white-space: nowrap;
+}
+
+label input[type="number"] {
+    text-align: right;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    background: linear-gradient(273deg, rgba(135,85,196,1) 25%, rgba(252,70,107,1) 50%);
+    background-size: 200%;
+    background-position: 25%;
+    transition: 0.3s ease-out;
+}
+
+button[type="submit"]:hover {
+    background-position: 75%
 }
