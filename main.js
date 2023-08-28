@@ -14,28 +14,39 @@ const uppercase_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercase_chars = "abcdefghijklmnopqrstuvwxyz";
 const numbers_chars = "0123456789";
 const symbols_chars = "!@#$%^&*()";
+let something = false;
 
 function GeneratePassword() {
     let password = "";
     let length = length_el.value;
     let chars = "";
 
-    chars += uppercase_el.checked ? uppercase_chars : "";
-    chars += lowercase_el.checked ? lowercase_chars : "";
-    chars += numbers_el.checked ? numbers_chars : "";
-    chars += symbols_el.checked ? symbols_chars : "";
+    if(uppercase_el.checked || lowercase_el.checked || numbers_el.checked ||  symbols_el.checked ){
+        chars += uppercase_el.checked ? uppercase_chars : "";
+        chars += lowercase_el.checked ? lowercase_chars : "";
+        chars += numbers_el.checked ? numbers_chars : "";
+        chars += symbols_el.checked ? symbols_chars : "";
+    
+        for (let i = 0; i <= length; i++) {
+            let rand = Math.floor(Math.random() * chars.length);
+            password += chars.substring(rand, rand + 1);
+        }
+        password_el.value = password;
+        something=true;
 
-    for (let i = 0; i <= length; i++) {
-        let rand = Math.floor(Math.random() * chars.length);
-        password += chars.substring(rand, rand + 1);
+    }else{
+        alert("Please select any given checkbox(s).");
+        something=false;
     }
-    password_el.value = password;
 }
 
 async function CopyPassword() {
-    if (navigator.clipboard) {
+    if (navigator.clipboard && something) {
         await navigator.clipboard.writeText(password_el.value);
 
         alert("Password is copied to clipboard");
+    }
+    else {
+        alert("Nothing is there on the clipboard")
     }
 }
