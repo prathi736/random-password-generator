@@ -10,9 +10,13 @@ I have created a random password generator app with help of Vanilla JavaScript. 
 
 ## 👇 Video of the Application
 
+https://github.com/prathi736/random-password-generator/assets/63576303/54794101-3f28-4ba2-8f21-f00b2bc09b83
 
 
 ## 📸 Screenshot of the Application
+
+![rpgthumnail](https://github.com/prathi736/random-password-generator/assets/63576303/7c02bff7-8e3d-4ac5-a49b-c9ae543f08be)
+
 
 ## 😀 Author
 
